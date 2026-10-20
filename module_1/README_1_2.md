@@ -202,15 +202,15 @@ For example, ID `102` is not twice as meaningful as ID `51`. The numerical IDs i
 
 A model typically uses an embedding matrix to map each token ID to a learned vector:
 
-\[
+$$
 \mathbf{e}_i = E[i]
-\]
+$$
 
 where:
 
-- \(i\) is a token ID.
-- \(E\) is the embedding matrix.
-- \(E[i]\) is the vector associated with that token.
+- $i$ is a token ID.
+- $E$ is the embedding matrix.
+- $E[i]$ is the vector associated with that token.
 
 The resulting vector is used as part of the model's input representation. Transformer models also incorporate information about token positions.
 
@@ -316,9 +316,9 @@ For example, a Devanagari character with combining marks may contain multiple co
 
 Therefore:
 
-\[
+$$
 \text{bytes} \neq \text{characters} \neq \text{tokens}
-\]
+$$
 
 This is a conceptual inequality, not a claim that the counts must always differ. Sometimes two counts happen to be equal.
 
@@ -431,12 +431,12 @@ The context can include input text and, depending on the model and interface, co
 
 A simplified accounting model is:
 
-\[
+$$
 T_{\text{total}} =
 T_{\text{input}} + T_{\text{output}}
-\]
+$$
 
-where \(T_{\text{input}}\) and \(T_{\text{output}}\) are the input and generated output token counts.
+where $T_{\text{input}}$ and $T_{\text{output}}$ are the input and generated output token counts.
 
 Real systems may also include message-formatting tokens, tool calls, hidden or multimodal representations, and other overhead. The exact accounting depends on the API.
 
@@ -448,20 +448,20 @@ Many LLM APIs charge according to input and output token usage, although exact p
 
 A simplified cost equation is:
 
-\[
+$$
 C =
 \frac{T_{\text{in}}}{1000}P_{\text{in}}
 +
 \frac{T_{\text{out}}}{1000}P_{\text{out}}
-\]
+$$
 
 where:
 
-- \(C\) is the request cost.
-- \(T_{\text{in}}\) is the number of billable input tokens.
-- \(T_{\text{out}}\) is the number of billable output tokens.
-- \(P_{\text{in}}\) is the price per 1,000 input tokens.
-- \(P_{\text{out}}\) is the price per 1,000 output tokens.
+- $C$ is the request cost.
+- $T_{\text{in}}$ is the number of billable input tokens.
+- $T_{\text{out}}$ is the number of billable output tokens.
+- $P_{\text{in}}$ is the price per 1,000 input tokens.
+- $P_{\text{out}}$ is the price per 1,000 output tokens.
 
 This is a simplified example for a pricing scheme expressed per 1,000 tokens. Always check the current pricing for the actual API.
 
@@ -472,16 +472,16 @@ For example, suppose a hypothetical service charges:
 
 A request using 2,000 input tokens and 500 output tokens would cost:
 
-\[
+$$
 C =
 \frac{2000}{1000}(0.002)
 +
 \frac{500}{1000}(0.008)
-\]
+$$
 
-\[
+$$
 C = 0.004 + 0.004 = \$0.008
-\]
+$$
 
 These prices are illustrative, not current vendor pricing.
 
@@ -1122,9 +1122,9 @@ Consider a user asking an LLM to calculate the total cost of 17 items priced at 
 
 The intended calculation is:
 
-\[
+$$
 17 \times 125 = 2125
-\]
+$$
 
 The tokenizer represents the written numbers as token IDs. It does not guarantee that the model will perform the multiplication correctly.
 
@@ -1523,26 +1523,26 @@ Print the category, token count, and tokens per character. Clearly state how you
 
 **Exercise 7:**
 
-\[
+$$
 C = \frac{4000}{1000}(0.003)
 + \frac{800}{1000}(0.012)
-\]
+$$
 
-\[
+$$
 C = 0.012 + 0.0096 = \$0.0216
-\]
+$$
 
 The hypothetical request costs $0.0216.
 
 **Exercise 8:**
 
-\[
+$$
 T_{\text{total}} = 2000 + 10000 + 2500 = 14500
-\]
+$$
 
-\[
+$$
 T_{\text{remaining}} = 16000 - 14500 = 1500
-\]
+$$
 
 The estimate leaves 1,500 tokens of headroom. In a real application, account for model-specific message formatting, tool calls, and other overhead. If the total exceeded the supported limit, reduce irrelevant context, select better retrieval chunks, or adjust the output budget.
 
