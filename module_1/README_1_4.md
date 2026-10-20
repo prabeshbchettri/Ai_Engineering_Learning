@@ -185,13 +185,14 @@ If the actual target is `Kathmandu`, the model should assign a high probability 
 
 A common objective for next-token prediction is cross-entropy loss:
 
-\[
+$$
 \mathcal{L}(\theta)
 =
 -\frac{1}{N}
 \sum_{t=1}^{N}
-\log P_\theta(x_t \mid x_{<t})
-\]
+\log P_{\theta}(x_t \mid x_{<t})
+$$
+
 
 Here:
 
