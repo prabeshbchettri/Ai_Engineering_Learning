@@ -1,0 +1,8 @@
+College Rules
+
+1. Students must maintain at least 80% attendance.
+2. The final examination carries 60 marks.
+3. Internal assessment carries 40 marks.
+4. Students must submit laboratory reports before the deadline.
+5. Students who miss an examination must contact the administration.
+6. The library is open from 8 AM to 5 PM.
