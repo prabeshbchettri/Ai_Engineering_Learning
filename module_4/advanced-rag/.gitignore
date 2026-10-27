@@ -1,0 +1,29 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local data and generated indexes
+data/documents/*
+data/processed/*
+data/vector_store/*
+!data/documents/.gitkeep
+!data/processed/.gitkeep
+!data/vector_store/.gitkeep
+
+# Local machine files
+.DS_Store
+Thumbs.db

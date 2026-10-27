@@ -1,3 +1,0 @@
-Artificial intelligence enables computers to perform tasks that usually require human intelligence.
-
-Retrieval-Augmented Generation, or RAG, combines document retrieval with language generation. It helps language models answer questions using relevant information from external documents.
